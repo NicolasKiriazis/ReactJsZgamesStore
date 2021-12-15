@@ -1,0 +1,12 @@
+.footer{
+    background-color: #6ea0dd;
+    position: relative;
+    bottom: 0px;
+}
+
+.footer p{
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

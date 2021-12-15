@@ -1,0 +1,19 @@
+div nav {
+    background-color: #6ea0dd;
+}
+
+.dropdown-menu{
+    background-color: #6ea0dd;
+}
+
+.nav-item{
+    
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.carrito{
+    position: absolute;
+    right: 10px;
+}
