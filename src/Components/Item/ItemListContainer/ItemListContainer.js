@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 
 import ItemList from '../ItemList/ItemList'
+import ItemListDetail from '../ItemList/ItemListDetail';
 
 
 const games = [];
@@ -49,6 +50,13 @@ function GetList() {
 
 }
 
+function GetItem(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(games), 2000)
+    })
+    
+}
+
 
 
 const ItemListContainer = () => {
@@ -70,11 +78,24 @@ const ItemListContainer = () => {
 
     // Pasando el estado por Props
 
+    //Usando useState para obtener el estado con el array para armar el Detail//
+
+    const [items, setItems] = useState([])
+
+    useEffect(()=>{
+
+        const listItem = GetItem() // Recibe la Promise//
+        listItem.then(productDetail=>{
+            setItems(productDetail)
+        }, err => {console.log(err)})
+
+    }, [])
 
     return (
-        
+        <>
         <ItemList products={products}/>
-        
+        <ItemListDetail items={items}/>
+        </>
     )
 
     
